@@ -1,1 +1,76 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fyzika – Rentgen & Zrcadlo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Domů">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Fyzika: Rentgen &amp; Zrcadlo</span>
+      </a>
+
+      <nav aria-label="Hlavní navigace">
+        <a class="active" href="index.html">Úvod</a>
+        <a href="teorie.html">Teorie</a>
+        <a href="praxe.html">Praxe</a>
+        <a href="zajimavosti.html">Zajímavosti</a>
+        <a href="zdroje.html">Zdroje</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Elektromagnetické vlnění v praxi: rentgen a zrcadla</h1>
+      <p class="subtitle">
+        Tenhle web je jednoduchý přehled dvou témat: <strong>rentgenového záření</strong> a
+        <strong>odrazu světla na zrcadlech</strong>. Cílem je vysvětlit princip,
+        ukázat praktické využití a přidat zajímavosti (včetně videí).
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Rentgen (X-ray)</h2>
+          <p>
+            Co je rentgenové záření, proč proniká materiály, jak vzniká a kde se používá.
+            Přidám i bezpečnost: co znamená „dávka“ a proč se musí šetřit.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Zrcadlo &amp; odraz</h2>
+          <p>
+            Proč je zrcadlo „zrcadlo“, co se děje na povrchu kovu/skla a jak fungují
+            rovinná, dutá a vypuklá zrcadla.
+          </p>
+        </div>
+      </div>
+
+      <div class="placeholder">
+        <strong>Sem později dáš obrázky / videa:</strong><br />
+        • Obrázek rentgenu nebo rentgenky<br />
+        • Obrázek rovinného/dutého/vypuklého zrcadla<br />
+        • Video (YouTube embed) nebo vlastní soubor<br /><br />
+        Tip: obrázky dej do složky <code>img/</code> a pak sem vložíš např.
+        <code>&lt;img src="img/rentgen.jpg" alt="..." /&gt;</code>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Martin – školní projekt (GitHub Pages)
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
