@@ -3,73 +3,120 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fyzika – Rentgen & Zrcadlo</title>
+  <title>Fyzika – Rentgen & Zrcadla</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
+  <header class="topbar">
+    <div class="container topbar-inner">
       <a class="brand" href="index.html" aria-label="Domů">
-        <span class="brand-badge" aria-hidden="true"></span>
-        <span>Fyzika: Rentgen &amp; Zrcadlo</span>
+        <span class="logo" aria-hidden="true"></span>
+        <span>Fyzika: Rentgen &amp; Zrcadla</span>
       </a>
 
-      <nav aria-label="Hlavní navigace">
-        <a class="active" href="index.html">Úvod</a>
-        <a href="teorie.html">Teorie</a>
-        <a href="praxe.html">Praxe</a>
-        <a href="zajimavosti.html">Zajímavosti</a>
-        <a href="zdroje.html">Zdroje</a>
+      <nav class="nav" aria-label="Navigace">
+        <a class="pill active" href="index.html">Úvod</a>
+        <a class="pill" href="teorie.html">Teorie</a>
+        <a class="pill" href="praxe.html">Praxe</a>
+        <a class="pill" href="zajimavosti.html">Zajímavosti</a>
+        <a class="pill" href="zdroje.html">Zdroje</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <h1>Elektromagnetické vlnění v praxi: rentgen a zrcadla</h1>
-      <p class="subtitle">
-        Tenhle web je jednoduchý přehled dvou témat: <strong>rentgenového záření</strong> a
-        <strong>odrazu světla na zrcadlech</strong>. Cílem je vysvětlit princip,
-        ukázat praktické využití a přidat zajímavosti (včetně videí).
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h2>Rentgen (X-ray)</h2>
-          <p>
-            Co je rentgenové záření, proč proniká materiály, jak vzniká a kde se používá.
-            Přidám i bezpečnost: co znamená „dávka“ a proč se musí šetřit.
+      <div class="hero-inner">
+        <div>
+          <div class="h-eyebrow">Školní web • elektromagnetické vlnění • jednoduché, ale moderní</div>
+          <h1>Vyber si téma a podle toho se ti přizpůsobí celý web.</h1>
+          <p class="lead">
+            Na začátku zvolíš <strong>Rentgen</strong> nebo <strong>Zrcadla</strong>.
+            Volbu si web pamatuje a podle toho ukazuje relevantní obsah na všech stránkách.
           </p>
+
+          <div class="section" style="margin-top:18px">
+            <h2>Co si dnes chceš otevřít?</h2>
+            <div class="choice" role="group" aria-label="Výběr tématu">
+              <button class="tile tile-xray" id="chooseXray" type="button">
+                <h3>Rentgen</h3>
+                <p>Vznik, vlastnosti, průnik materiály, využití a bezpečnost.</p>
+              </button>
+
+              <button class="tile tile-mirror" id="chooseMirror" type="button">
+                <h3>Zrcadla</h3>
+                <p>Odraz světla, typy zrcadel, obraz a praktické aplikace.</p>
+              </button>
+            </div>
+
+            <div class="selected-badge" id="selectedBadge">Zatím není vybráno téma.</div>
+          </div>
         </div>
 
-        <div class="card">
-          <h2>Zrcadlo &amp; odraz</h2>
-          <p>
-            Proč je zrcadlo „zrcadlo“, co se děje na povrchu kovu/skla a jak fungují
-            rovinná, dutá a vypuklá zrcadla.
-          </p>
-        </div>
-      </div>
+        <div>
+          <div class="section">
+            <h2>Rychlá mapa webu</h2>
+            <div class="grid">
+              <div class="card">
+                <h3>Teorie</h3>
+                <p>Vysvětlení principu (bez zbytečných omáček).</p>
+              </div>
+              <div class="card">
+                <h3>Praxe</h3>
+                <p>Příklady, pokusy, aplikace, videa.</p>
+              </div>
+              <div class="card">
+                <h3>Zajímavosti</h3>
+                <p>Fakta, mýty, časté chyby a „wow“ věci.</p>
+              </div>
+              <div class="card">
+                <h3>Zdroje</h3>
+                <p>Odkazy a citace (ať je to obhajitelné).</p>
+              </div>
+            </div>
 
-      <div class="placeholder">
-        <strong>Sem později dáš obrázky / videa:</strong><br />
-        • Obrázek rentgenu nebo rentgenky<br />
-        • Obrázek rovinného/dutého/vypuklého zrcadla<br />
-        • Video (YouTube embed) nebo vlastní soubor<br /><br />
-        Tip: obrázky dej do složky <code>img/</code> a pak sem vložíš např.
-        <code>&lt;img src="img/rentgen.jpg" alt="..." /&gt;</code>
+            <div class="section" style="margin-top:14px">
+              <h2>Obrázky a videa</h2>
+              <p>
+                Obrázky dej do složky <code>img/</code>. Videa nejlíp vlož přes YouTube (unlisted) – bude to rychlé a bez limitů.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      © <span id="year"></span> Martin – školní projekt (GitHub Pages)
-    </div>
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Martin – GitHub Pages</div>
   </footer>
 
   <script>
+    const KEY = "tema";
+    const badge = document.getElementById("selectedBadge");
+
+    function applyTheme(theme){
+      // theme: "xray" | "mirror" | null
+      if(theme === "xray" || theme === "mirror"){
+        document.body.setAttribute("data-theme", theme);
+        badge.textContent = "Vybrané téma: " + (theme === "xray" ? "Rentgen" : "Zrcadla") + ". (Můžeš změnit kliknutím.)";
+      } else {
+        document.body.removeAttribute("data-theme");
+        badge.textContent = "Zatím není vybráno téma.";
+      }
+    }
+
+    function setTheme(theme){
+      localStorage.setItem(KEY, theme);
+      applyTheme(theme);
+    }
+
+    document.getElementById("chooseXray").addEventListener("click", () => setTheme("xray"));
+    document.getElementById("chooseMirror").addEventListener("click", () => setTheme("mirror"));
+
+    // init
+    applyTheme(localStorage.getItem(KEY));
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
