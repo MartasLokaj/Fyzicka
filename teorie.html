@@ -1,1 +1,76 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fyzika | Teorie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-mode="">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">FYZIKA LAB</a>
+      <nav class="nav-links">
+        <a href="index.html">Úvod</a>
+        <a class="active" href="teorie.html">Teorie</a>
+        <a href="praxe.html">Praxe</a>
+        <a href="zajimavosti.html">Zajímavosti</a>
+        <a href="zdroje.html">Zdroje</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="kicker" id="modeKicker">Téma</div>
+        <h1 class="h1" id="modeTitle">Teorie</h1>
+        <p class="sub muted">Zatím jen kostra layoutu. Texty doplníš ty.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <div class="placeholder"></div>
+          <p class="muted" style="margin:14px 0 0;">Sem přijde obsah Teorie (podle zvoleného tématu).</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand">FYZIKA LAB</div>
+          <p class="muted">Projekt: elektromagnetické vlnění – Rentgen & Zrcadla.</p>
+        </div>
+        <div>
+          <div class="kicker">Menu</div>
+          <a href="index.html">Úvod</a><br/>
+          <a href="teorie.html">Teorie</a><br/>
+          <a href="praxe.html">Praxe</a><br/>
+          <a href="zajimavosti.html">Zajímavosti</a><br/>
+          <a href="zdroje.html">Zdroje</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // nastav "mode" na všech stránkách podle volby z Úvodu
+    const mode = localStorage.getItem("mode") || "rentgen";
+    document.body.setAttribute("data-mode", mode);
+
+    const kicker = document.getElementById("modeKicker");
+    const title  = document.getElementById("modeTitle");
+
+    if(mode === "rentgen"){
+      kicker.textContent = "Neviditelné spektrum";
+      title.textContent  = "Teorie: Rentgen & CT";
+    } else {
+      kicker.textContent = "Světlo a optika";
+      title.textContent  = "Teorie: Zrcadla & odraz";
+    }
+  </script>
+</body>
+</html>
