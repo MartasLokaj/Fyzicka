@@ -23,24 +23,24 @@
   <main>
     <section class="choice-hero" aria-label="Výběr tématu">
       <button class="choice-panel" type="button" data-mode="rentgen"
-              style="--bgimg:url('assets/img/rentgen.png')">
+        style="background-image: url('assets/img/rentgen.png');">
         <div class="choice-overlay"></div>
         <div class="choice-content">
           <div class="kicker">Neviditelné spektrum</div>
-          <h1 class="choice-title">Rentgen</h1>
+          <h1 class="choice-title">RENTGEN</h1>
           <p class="choice-sub">Pohled do lidského těla • CT sken</p>
-          <span class="choice-cta">Pokračovat</span>
+          <span class="choice-cta">Vybrat</span>
         </div>
       </button>
 
       <button class="choice-panel" type="button" data-mode="zrcadla"
-              style="--bgimg:url('assets/img/zrcadlo.png')">
+        style="background-image: url('assets/img/zrcadlo.png');">
         <div class="choice-overlay"></div>
         <div class="choice-content">
           <div class="kicker">Světlo a optika</div>
-          <h1 class="choice-title">Zrcadla</h1>
+          <h1 class="choice-title">ZRCDLA</h1>
           <p class="choice-sub">Odraz • Periskop • Klamná zrcadla</p>
-          <span class="choice-cta">Pokračovat</span>
+          <span class="choice-cta">Vybrat</span>
         </div>
       </button>
 
@@ -49,7 +49,6 @@
   </main>
 
   <script>
-    // Ulož výběr a přesměruj na Teorii
     document.querySelectorAll("[data-mode]").forEach(btn => {
       btn.addEventListener("click", () => {
         localStorage.setItem("mode", btn.getAttribute("data-mode"));
