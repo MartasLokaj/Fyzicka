@@ -3,257 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fyzika | Rentgen & Zrcadla</title>
+  <title>Fyzika | Úvod</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
-<body data-mode="rentgen">
-  <!-- NAV -->
+<body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#uvod">FYZIKA LAB</a>
-
+      <a class="brand" href="index.html">FYZIKA LAB</a>
       <nav class="nav-links">
-        <a href="#uvod">Úvod</a>
-        <a href="#teorie">Teorie</a>
-        <a href="#praxe">Praxe</a>
-        <a href="#zajimavosti">Zajímavosti</a>
+        <a class="active" href="index.html">Úvod</a>
+        <a href="teorie.html">Teorie</a>
+        <a href="praxe.html">Praxe</a>
+        <a href="zajimavosti.html">Zajímavosti</a>
         <a href="zdroje.html">Zdroje</a>
       </nav>
     </div>
   </header>
 
-  <!-- FULLSCREEN CHOICE HERO -->
   <main>
-    <section id="uvod" class="choice-hero" aria-label="Výběr tématu">
-      <button class="choice-panel" type="button" data-set-mode="rentgen"
-              style="--bg:url('assets/img/rentgen.png')">
+    <section class="choice-hero" aria-label="Výběr tématu">
+      <button class="choice-panel" type="button" data-mode="rentgen"
+              style="--bgimg:url('assets/img/rentgen.png')">
         <div class="choice-overlay"></div>
         <div class="choice-content">
-          <p class="choice-kicker">Technologie & zdraví</p>
-          <h1 class="choice-title">RENTGEN</h1>
-          <p class="choice-subtitle">Pohled do lidského těla • CT sken</p>
-          <span class="choice-cta">Zvolit téma</span>
+          <div class="kicker">Neviditelné spektrum</div>
+          <h1 class="choice-title">Rentgen</h1>
+          <p class="choice-sub">Pohled do lidského těla • CT sken</p>
+          <span class="choice-cta">Pokračovat</span>
         </div>
       </button>
 
-      <button class="choice-panel" type="button" data-set-mode="zrcadla"
-              style="--bg:url('assets/img/zrcadlo.png')">
+      <button class="choice-panel" type="button" data-mode="zrcadla"
+              style="--bgimg:url('assets/img/zrcadlo.png')">
         <div class="choice-overlay"></div>
         <div class="choice-content">
-          <p class="choice-kicker">Světlo & optika</p>
-          <h1 class="choice-title">ZRCDLA</h1>
-          <p class="choice-subtitle">Odraz • Periskop • Klamná zrcadla</p>
-          <span class="choice-cta">Zvolit téma</span>
+          <div class="kicker">Světlo a optika</div>
+          <h1 class="choice-title">Zrcadla</h1>
+          <p class="choice-sub">Odraz • Periskop • Klamná zrcadla</p>
+          <span class="choice-cta">Pokračovat</span>
         </div>
       </button>
 
-      <div class="choice-bottom-hint">
-        Klikni na téma. Obsah stránky se přepne podle výběru.
-      </div>
+      <div class="choice-footer">Vyber téma. Ostatní stránky se přepnou podle volby.</div>
     </section>
-
-    <!-- CONTENT (SWITCHES BY MODE) -->
-    <section id="teorie" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Teorie</h2>
-          <p>Jak to funguje – stručně, srozumitelně a bez balastu.</p>
-        </div>
-
-        <!-- RENTGEN -->
-        <div class="mode-block" data-mode-only="rentgen">
-          <div class="grid-2">
-            <article class="card">
-              <h3>Co je rentgenové záření</h3>
-              <p>
-                Rentgenové záření je elektromagnetické vlnění s velmi krátkou vlnovou délkou,
-                které snadno proniká měkkými tkáněmi, ale silněji se pohlcuje v kostech.
-              </p>
-            </article>
-            <article class="card">
-              <h3>CT sken</h3>
-              <p>
-                CT (computed tomography) skládá mnoho rentgenových „řezů“ do 3D obrazu.
-                Počítač rekonstruuje vrstvy podle toho, kolik záření tkáně pohltí.
-              </p>
-            </article>
-          </div>
-
-          <details class="accordion">
-            <summary>Jak vzniká rentgen v rentgence</summary>
-            <div class="accordion-body">
-              <p>
-                Elektrony jsou urychleny vysokým napětím a prudce zabrzděny na kovové anodě.
-                Při brzdění vyzáří část energie jako rentgenové fotony (brzdné záření).
-              </p>
-            </div>
-          </details>
-
-          <details class="accordion">
-            <summary>Proč jsou na snímku kosti bílé</summary>
-            <div class="accordion-body">
-              <p>
-                Kosti mají vyšší hustotu a prvkové složení, které rentgenové záření více pohlcuje,
-                takže na detektor dopadne méně záření → oblast se zobrazí světlejší.
-              </p>
-            </div>
-          </details>
-        </div>
-
-        <!-- ZRCADLA -->
-        <div class="mode-block" data-mode-only="zrcadla">
-          <div class="grid-2">
-            <article class="card">
-              <h3>Zákon odrazu</h3>
-              <p>
-                Úhel dopadu se rovná úhlu odrazu (měřeno od kolmice k povrchu).
-                Proto zrcadlo „nepřevrací“ nahoře/dole, ale prohazuje levá/pravá podle orientace pozorovatele.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Typy zrcadel</h3>
-              <p>
-                Rovinné – věrný obraz. Duté – může zvětšovat (např. kosmetické).
-                Vypuklé – zmenšuje, ale zvětšuje zorné pole (zpětná zrcátka).
-              </p>
-            </article>
-          </div>
-
-          <details class="accordion">
-            <summary>Periskop: proč funguje</summary>
-            <div class="accordion-body">
-              <p>
-                Dvě rovinná zrcadla pod 45° odchylují paprsek tak, aby se obraz „přenesl“
-                přes překážku. Klíč je geometrie odrazu a zachování úhlů.
-              </p>
-            </div>
-          </details>
-
-          <details class="accordion">
-            <summary>Klamná zrcadla a optické iluze</summary>
-            <div class="accordion-body">
-              <p>
-                Kombinace více odrazů a zakřivených ploch deformuje obraz.
-                Vznikají „protažené“ nebo „zúžené“ postavy – není to magie, jen geometrie a perspektiva.
-              </p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section id="praxe" class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Praxe</h2>
-          <p>Kde se to používá v reálném světě.</p>
-        </div>
-
-        <div class="mode-block" data-mode-only="rentgen">
-          <div class="grid-3">
-            <div class="card"><h3>Medicína</h3><p>Diagnostika zlomenin, zubní snímky, CT pro 3D zobrazení.</p></div>
-            <div class="card"><h3>Bezpečnost</h3><p>Kontroly zavazadel na letištích, skenery balíků.</p></div>
-            <div class="card"><h3>Průmysl</h3><p>Nedestruktivní kontrola svarů a materiálů (defekty uvnitř).</p></div>
-          </div>
-        </div>
-
-        <div class="mode-block" data-mode-only="zrcadla">
-          <div class="grid-3">
-            <div class="card"><h3>Automobily</h3><p>Vypuklá zrcátka: širší zorné pole, menší mrtvý úhel.</p></div>
-            <div class="card"><h3>Optika</h3><p>Dalekohledy, přístroje, odrazné soustavy pro směrování světla.</p></div>
-            <div class="card"><h3>Architektura</h3><p>Zrcadla pro optické zvětšení prostoru a práci se světlem.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="zajimavosti" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Zajímavosti</h2>
-          <p>Mýty, kvíz nebo experiment – podle tématu.</p>
-        </div>
-
-        <div class="mode-block" data-mode-only="rentgen">
-          <div class="grid-2">
-            <div class="card">
-              <h3>Mýtus: „Rentgen tě vždycky zničí“</h3>
-              <p>
-                Riziko závisí na dávce. V medicíně se dávka hlídá a volí se jen když přínos převýší riziko.
-                Problém je zbytečná nebo opakovaná expozice bez důvodu.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Mini kvíz</h3>
-              <p>Kolik vrstev obrazu vytvoří CT? Co je brzdné záření? (doplníme otázky)</p>
-              <button class="btn" type="button" id="quizRentgen">Spustit kvíz</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="mode-block" data-mode-only="zrcadla">
-          <div class="grid-2">
-            <div class="card">
-              <h3>Mýtus: „Zrcadlo převrací nahoře/dole“</h3>
-              <p>
-                Zrcadlo převrací směr kolmý k ploše (před/za), ne „nahoře/dole“.
-                Levá/pravá se nám plete kvůli tomu, jak se sami otáčíme při představě „výměny míst“.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Experiment: periskop</h3>
-              <p>2 zrcátka / alobal + karton, úhel 45°, paprsek se odrazí dvakrát a „obejde“ překážku.</p>
-              <button class="btn" type="button" id="quizZrcadla">Mini test</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <div class="brand footer-brand">FYZIKA LAB</div>
-          <p class="muted">Projekt: elektromagnetické vlnění – Rentgen & Zrcadla.</p>
-        </div>
-        <div>
-          <h4>Menu</h4>
-          <a href="#uvod">Úvod</a>
-          <a href="#teorie">Teorie</a>
-          <a href="#praxe">Praxe</a>
-          <a href="#zajimavosti">Zajímavosti</a>
-          <a href="zdroje.html">Zdroje</a>
-        </div>
-      </div>
-    </footer>
   </main>
 
   <script>
-    // MODE SWITCH
-    const setMode = (mode) => {
-      document.body.setAttribute("data-mode", mode);
-      localStorage.setItem("mode", mode);
-    };
-
-    // restore mode
-    const saved = localStorage.getItem("mode");
-    if (saved === "rentgen" || saved === "zrcadla") setMode(saved);
-
-    document.querySelectorAll("[data-set-mode]").forEach((btn) => {
+    // Ulož výběr a přesměruj na Teorii
+    document.querySelectorAll("[data-mode]").forEach(btn => {
       btn.addEventListener("click", () => {
-        setMode(btn.getAttribute("data-set-mode"));
-        // posun na obsah, aby uživatel viděl, že se něco změnilo
-        document.querySelector("#teorie").scrollIntoView({ behavior: "smooth" });
+        localStorage.setItem("mode", btn.getAttribute("data-mode"));
+        window.location.href = "teorie.html";
       });
-    });
-
-    // placeholder mini “quiz”
-    document.getElementById("quizRentgen")?.addEventListener("click", () => {
-      alert("Kvíz (Rentgen) – sem doplníme 5 otázek.");
-    });
-    document.getElementById("quizZrcadla")?.addEventListener("click", () => {
-      alert("Mini test (Zrcadla) – sem doplníme 5 otázek.");
     });
   </script>
 </body>
